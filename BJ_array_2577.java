@@ -1,3 +1,4 @@
+package array;
 import java.util.Scanner;
 
 public class BJ_array_2577 {
@@ -8,21 +9,21 @@ public class BJ_array_2577 {
 		int A = sc.nextInt();
 		int B = sc.nextInt();
 		int C = sc.nextInt();
-		String str =A*B*C+" ";
+		String str = A*B*C+" ";
 		
-		int[] arr = new int[] {0,1,2,3,4,5,6,7,8,9};
-		int[] count = new int[] {};
+		int[] count = new int[10];
 		
-		for(int i=0;i<arr.length;i++) {
-			for(int j=0;j<arr.length;j++) {
-				if(str.charAt(j)==arr[i]) {
-					count[j]++;
-				}
-			}
-		}
+		
 		for(int i=0;i<count.length;i++) {
+			count[i]=0;
+			for(int j=0;j<str.length();j++) {
+				if((str.charAt(j)-'0')==i)
+					count[i]++;
+			}
 			System.out.println(count[i]);
+		}
+		sc.close();		
 		}
 	}
 
-}
+
